@@ -1,0 +1,17 @@
+*{
+    margin:0;
+}
+
+p{
+    font-size: large;
+    color: blue;
+}
+
+p:hover{
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+  
