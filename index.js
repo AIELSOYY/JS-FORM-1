@@ -36,16 +36,12 @@ document.getElementById('topsLudPrat').onclick = function showLudPrat() { //Mont
     var elements = document.getElementsByTagName('article');
     statLength = elements.length;
     for(let i =0; i<statLength; i++){
-        if(elements[i].classList.contains('hidden')!= true){
-            elements[i].classList.add('hidden');
-        }
+        elements[i].classList.add('hidden');
     }
     elements = document.getElementsByClassName('ludPrat');
     statLength = elements.length;
     for(let i =0; i<statLength; i++){
-        if(elements[i].classList.contains('hidden')== true){
-            elements[i].classList.remove('hidden');
-        }
+        elements[i].classList.remove('hidden');
     }
 }
 
@@ -53,16 +49,12 @@ document.getElementById('topsLudSpo').onclick = function showLudSpo() { //Montre
     var elements = document.getElementsByTagName('article');
     statLength = elements.length;
     for(let i =0; i<statLength; i++){
-        if(elements[i].classList.contains('hidden')!= true){
             elements[i].classList.add('hidden');
-        }
     }
     elements = document.getElementsByClassName('ludSport');
     statLength = elements.length;
     for(let i =0; i<statLength; i++){
-        if(elements[i].classList.contains('hidden')== true){
-            elements[i].classList.remove('hidden');
-        }
+        elements[i].classList.remove('hidden');
     }
 }
 
@@ -70,15 +62,11 @@ document.getElementById('topsPrat').onclick = function showPrat() { //Montrer pr
     var elements = document.getElementsByTagName('article');
     statLength = elements.length;
     for(let i =0; i<statLength; i++){
-        if(elements[i].classList.contains('hidden')!= true){
-            elements[i].classList.add('hidden');
-        }
+        elements[i].classList.add('hidden');
     }
     elements = document.getElementsByClassName('prat');
     statLength = elements.length;
     for(let i =0; i<statLength; i++){
-        if(elements[i].classList.contains('hidden')== true){
-            elements[i].classList.remove('hidden');
-        }
+        elements[i].classList.remove('hidden');
     }
 }
