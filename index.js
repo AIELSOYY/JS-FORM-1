@@ -25,48 +25,39 @@ document.getElementById('second').onclick = function clickHighlight(){
     element.style.backgroundColor = 'yellow';
 }*/
 
+//Exercice 10.4
 document.getElementById('topsAll').onclick = function showAll() { //Montrer tout
-    var elements = document.getElementsByClassName('hidden');
-    while(elements.length){
-        elements[0].classList.remove('hidden');
-    }
+    showCategory('all');
 }
 
 document.getElementById('topsLudPrat').onclick = function showLudPrat() { //Montrer ludique pratique
-    var elements = document.getElementsByTagName('article');
-    statLength = elements.length;
-    for(let i =0; i<statLength; i++){
-        elements[i].classList.add('hidden');
-    }
-    elements = document.getElementsByClassName('ludPrat');
-    statLength = elements.length;
-    for(let i =0; i<statLength; i++){
-        elements[i].classList.remove('hidden');
-    }
+    showCategory('ludPrat');
 }
 
 document.getElementById('topsLudSpo').onclick = function showLudSpo() { //Montrer ludique sportive
-    var elements = document.getElementsByTagName('article');
-    statLength = elements.length;
-    for(let i =0; i<statLength; i++){
-            elements[i].classList.add('hidden');
-    }
-    elements = document.getElementsByClassName('ludSport');
-    statLength = elements.length;
-    for(let i =0; i<statLength; i++){
-        elements[i].classList.remove('hidden');
-    }
+    showCategory('ludSport');
 }
 
 document.getElementById('topsPrat').onclick = function showPrat() { //Montrer pratique
-    var elements = document.getElementsByTagName('article');
-    statLength = elements.length;
-    for(let i =0; i<statLength; i++){
-        elements[i].classList.add('hidden');
-    }
-    elements = document.getElementsByClassName('prat');
-    statLength = elements.length;
-    for(let i =0; i<statLength; i++){
-        elements[i].classList.remove('hidden');
-    }
+    showCategory('prat');
 }
+
+function showCategory(category) {
+    if(category == 'all'){ 
+        elements = document.getElementsByClassName('hidden');
+        while(elements.length){
+            elements[0].classList.remove('hidden'); //Enlève la classe 'hidden' de tous les éléments ayant la classe 'hidden' afin de tous les afficher
+        }
+    }
+    else{
+        elements = document.getElementsByTagName('article'); 
+        for(let i =0; i<elements.length; i++){
+            if(elements[i].classList.contains(category)){ //Si l'élément appartient à la classe définie, la classe 'hidden' lui est enlevée afin de l'afficher 
+                elements[i].classList.remove('hidden');
+            }
+            else{ //Sinon, on ajoute l'élément 'hidden' afin de cacher l'élément
+                elements[i].classList.add('hidden');
+            }
+        }
+    }
+} 
