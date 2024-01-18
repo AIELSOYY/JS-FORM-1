@@ -26,6 +26,7 @@ document.getElementById('second').onclick = function clickHighlight(){
 }*/
 
 //Exercice 10.4
+/*
 document.getElementById('topsAll').onclick = function showAll() { //Montrer tout
     showCategory('all');
 }
@@ -60,4 +61,27 @@ function showCategory(category) {
             }
         }
     }
-} 
+}*/
+
+//Exercice 11.1
+/*function highlightDiv(event){
+    event.currentTarget.parentNode.style.background ="yellow";
+}
+
+var buttonElements=document.querySelectorAll("button");
+for(let i=0; i<buttonElements.length; i++){
+    buttonElements[i].addEventListener("click", (event) => {
+        highlightDiv(event);
+    });
+}*/
+//Exercice 11.2
+var inputField = document.createElement("input");
+var button = document.createElement("button");
+var buttonText = document.createTextNode("Vider le champ");
+button.appendChild(buttonText);
+document.body.appendChild(inputField);
+document.body.appendChild(button);
+
+document.querySelector("button").onclick = function removeText(){
+    element = document.querySelector("input").value="";
+}
