@@ -74,7 +74,18 @@ for(let i=0; i<buttonElements.length; i++){
         highlightDiv(event);
     });
 }*/
+/*
+var buttonElements=document.querySelectorAll("button");
+for(let i=0; i<buttonElements.length; i++){
+    buttonElements[i].onclick = function highlightDiv(event){
+        event.currentTarget.parentNode.style.background ="yellow";
+    }
+}*/
+
+
+
 //Exercice 11.2
+/*
 var inputField = document.createElement("input");
 var button = document.createElement("button");
 var buttonText = document.createTextNode("Vider le champ");
@@ -84,4 +95,31 @@ document.body.appendChild(button);
 
 document.querySelector("button").onclick = function removeText(){
     element = document.querySelector("input").value="";
+};
+*/
+
+//Exercice 12.1
+var imgTab = ["https://www.cdiscount.com/pdt2/x/e/n/1/700x700/ls24a336nhuxen/rw/ecran-pc-samsung-s24a336nhu-24-fhd-dalle.jpg", 
+"https://content.pearl.fr/media/cache/default/article_ultralarge_high_nocrop/shared/images/articles/K/KT8/clavier-usb-standard-avec-clavier-numerique-ref_KT8426_2.jpg", 
+"https://img.20mn.fr/7gT-wskjStmbsXxztMROJyk/1200x768_les-souris-ne-rafolent-pas-du-fromage",
+"https://media.carrefour.fr/medias/511e39c5a6cf36dea617fb9b7b3b54e7/p_1500x1500/3616473993380-photosite-20210921-165109-1.jpg"];
+var curImg = document.querySelector("img");
+curImg.src = imgTab[0];
+document.getElementById("nextImgButton").onclick = function nextImg(){
+    if(curImg.src != imgTab[imgTab.length-1]){
+        curImg.src = imgTab[imgTab.indexOf(curImg.src)+1];    
+    }
+    else{
+        curImg.src = imgTab[0];
+    }
+    swal("Hello world!");
+    
+
 }
+
+//Acordéon
+
+/*
+document.getElementById("categories").onclick = function openCat(){
+    
+}*/
