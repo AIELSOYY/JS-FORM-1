@@ -99,6 +99,7 @@ document.querySelector("button").onclick = function removeText(){
 */
 
 //Exercice 12.1
+/*
 var imgTab = ["https://www.cdiscount.com/pdt2/x/e/n/1/700x700/ls24a336nhuxen/rw/ecran-pc-samsung-s24a336nhu-24-fhd-dalle.jpg", 
 "https://content.pearl.fr/media/cache/default/article_ultralarge_high_nocrop/shared/images/articles/K/KT8/clavier-usb-standard-avec-clavier-numerique-ref_KT8426_2.jpg", 
 "https://img.20mn.fr/7gT-wskjStmbsXxztMROJyk/1200x768_les-souris-ne-rafolent-pas-du-fromage",
@@ -113,13 +114,47 @@ document.getElementById("nextImgButton").onclick = function nextImg(){
         curImg.src = imgTab[0];
     }
     swal("Hello world!");
-    
-
 }
+*/
 
-//Acordéon
-
+//Exercice 12.2
 /*
-document.getElementById("categories").onclick = function openCat(){
+var imgTab = ["https://www.cdiscount.com/pdt2/x/e/n/1/700x700/ls24a336nhuxen/rw/ecran-pc-samsung-s24a336nhu-24-fhd-dalle.jpg", 
+"https://content.pearl.fr/media/cache/default/article_ultralarge_high_nocrop/shared/images/articles/K/KT8/clavier-usb-standard-avec-clavier-numerique-ref_KT8426_2.jpg", 
+"https://img.20mn.fr/7gT-wskjStmbsXxztMROJyk/1200x768_les-souris-ne-rafolent-pas-du-fromage",
+"https://media.carrefour.fr/medias/511e39c5a6cf36dea617fb9b7b3b54e7/p_1500x1500/3616473993380-photosite-20210921-165109-1.jpg"];
+var imgElements = document.querySelectorAll("img");
+for(let i = 0; i<imgElements.length; i++){
+    imgElements[i].src = imgTab[i];
+    console.log(imgElements);
+}
+document.getElementById("nextImgButton").onclick = function nextImg(){
+    let maxIndex=-1;
+    for(let i = 0; i<imgElements.length; i++){ //Permet de vérifier si la dernière image est affichée, et garde l'index de l'élément du carroussel qui est en train de l'afficher
+        if(imgElements[i].src != imgTab[imgTab.length-1]){
+                maxIndex=i;
+        }
+    }
+    if(maxIndex != -1){
+        for(let i = 0; i<imgElements.length; i++){
+            imgElements[i].src = imgTab[imgTab.indexOf(imgElements[i].src)+1];
+        }
+    }
+    else{
+        for(let i = 0; i<imgElements.length; i++){
+            if(i==maxIndex){
+                imgElements[i]=imgTab[0];
+            }
+            else{
+                imgElements[i].src = imgTab[imgTab.indexOf(imgElements[i].src)+1];
+            }
+        }
+    }
+}
+*/
+//Headers, horloge (potentiellement heure actuelle) fonctionnelle
+
+ var sec;
+ while(1){
     
-}*/
+ }
